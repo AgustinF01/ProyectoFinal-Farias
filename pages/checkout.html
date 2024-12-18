@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <title>Checkout</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Mobius3D</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./catalog.html">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+              aria-controls="offcanvasCart">
+              <i class="bi bi-cart-fill"></i> Carrito (<span id="cart-count">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas para el carrito -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasCartLabel">Carrito de Compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Aquí puedes ver los productos que has agregado a tu carrito.</p>
+      <ul class="list-group" id="cart-items"></ul>
+      <hr>
+      <h5 id="cart-total">Total: $0.00</h5>
+      <button class="btn btn-danger" id="clear-cart">Limpiar Carrito</button>
+      <button class="btn btn-primary"><a href="./checkout.html">Proceder al Pago</a></button>
+    </div>
+  </div>
+
+  <!-- Seccion del Checkout -->
+  <div class="container my-5">
+
+    <!-- Sección para mostrar los productos en el carrito -->
+    <h3 class="text-center mb-4">Productos en el Carrito</h3>
+    <ul class="list-group" id="cart-items-checkout"></ul>
+    <h5 id="cart-total-checkout">Total: $0.00</h5>
+    <hr>
+
+    <button class="btn btn-danger" id="clear-cart-checkout">Limpiar Carrito</button>
+    <hr>
+
+    <h2 class="text-center mb-4">Formulario de Checkout</h2>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="firstName" placeholder="" value="Jane" required>
+          <div class="invalid-feedback">
+            Se requiere un nombre válido.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for=" lastName" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="lastName" placeholder="" value="Doe" required>
+          <div class="invalid-feedback">
+            Se requiere un apellido válido.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" placeholder="" value="janedoe@example.com" required>
+          <div class="invalid-feedback">
+            Se requiere un correo electrónico válido.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="address" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="address" placeholder="" value="1234 Main St" required>
+          <div class="invalid-feedback">
+            Se requiere una dirección válida.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="city" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="city" value="Mendoza" required>
+          <div class="invalid-feedback">
+            Se requiere una ciudad válida.
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="state" class="form-label">Provincia</label>
+          <select class="form-select" id="state" required>
+            <option value="">Selecciona...</option>
+            <option>Mendoza</option>
+            <option>Cordoba</option>
+            <option>Buenos Aires</option>
+          </select>
+          <div class="invalid-feedback">
+            Se requiere un estado válido.
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="zip" class="form-label">Código Postal</label>
+          <input type="text" class="form-control" id="zip" value="5513" required>
+          <div class="invalid-feedback">
+            Se requiere un código postal válido.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="cardNumber" class="form-label">Número de Tarjeta de Crédito</label>
+          <input type="text" class="form-control" id="cardNumber" placeholder="" value="1234 5678 9012 3456" required>
+          <div class="invalid-feedback">
+            Se requiere un número de tarjeta válido.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="expiry" class="form-label">Fecha de Expiración</label>
+          <input type="text" class="form-control" id="expiry" placeholder="" value="08/30" required>
+          <div class="invalid-feedback">
+            Se requiere una fecha de expiración válida.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="text" class="form-control" id="cvv" value="655" required>
+          <div class="invalid-feedback">
+            Se requiere un CVV válido.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Realizar Pedido</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal para mostrar el Comprobante de Pago -->
+  <div class="modal fade" id="comprobanteModal" tabindex="-1" aria-labelledby="comprobanteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="comprobanteModalLabel">Comprobante de Pago</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="comprobanteContent">
+          <!-- Aquí se insertará el contenido del comprobante -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-4">
+    <p>&copy; 2024 Mobius3D. Todos los derechos reservados.</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Política de Privacidad</a></li>
+      <li class="list-inline-item"><a href="#">Términos de Servicio</a></li>
+      <li class="list-inline-item"><a href="#">Contacto</a></li>
+    </ul>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      'use strict'
+      var forms = document.querySelectorAll('.needs-validation')
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+
+    // Función para mostrar los productos en el carrito
+    function mostrarProductosEnCarrito() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items-checkout');
+      const cartTotalElement = document.getElementById('cart-total-checkout');
+
+      cartItemsContainer.innerHTML = '';
+
+      let total = 0; 
+
+      // Agregar cada producto al contenedor
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.textContent = `${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`;
+
+        // Crear botón de eliminar
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'btn btn-danger btn-sm';
+        deleteButton.textContent = 'Eliminar';
+        deleteButton.onclick = () => eliminarProducto(index); 
+
+        li.appendChild(deleteButton);
+        cartItemsContainer.appendChild(li);
+        
+        total += item.price * item.quantity;
+      });
+
+      cartTotalElement.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    // Función para eliminar un producto del carrito
+    function eliminarProducto(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1); 
+      localStorage.setItem('cart', JSON.stringify(cart)); 
+      mostrarProductosEnCarrito(); 
+      updateCartDisplay(); 
+    }
+
+    // Función para limpiar el carrito
+    function limpiarCarrito() {
+      localStorage.removeItem('cart'); 
+      mostrarProductosEnCarrito(); 
+      updateCartDisplay(); 
+    }
+
+    // Funcion para limpiar el carrito
+    document.getElementById('clear-cart-checkout').onclick = limpiarCarrito;
+
+    // Inicializar la visualización del carrito al cargar la página
+    document.addEventListener('DOMContentLoaded', mostrarProductosEnCarrito);
+
+    // Función para actualizar la visualización del carrito
+    function updateCartDisplay() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+      const cartCountElement = document.getElementById('cart-count');
+
+      if (cartCountElement) {
+        cartCountElement.textContent = cartCount; // Actualiza el contador en el navbar
+      }
+    }
+
+    // Función para mostrar los productos en el offcanvas
+    function displayCartItems() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items');
+      cartItemsContainer.innerHTML = ''; 
+
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+        listItem.textContent = `${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`;
+
+        // Crear botón de eliminar
+        const removeButton = document.createElement('button');
+        removeButton.className = 'btn btn-danger btn-sm';
+        removeButton.textContent = 'Eliminar';
+        removeButton.onclick = () => {
+          removeFromCart(index); 
+        };
+
+        listItem.appendChild(removeButton);
+        cartItemsContainer.appendChild(listItem);
+        total += item.price * item.quantity; 
+      });
+
+      document.getElementById('cart-total').textContent = `Total: $${total.toFixed(2)}`; 
+    }
+
+    // Función para eliminar un producto del carrito
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1); 
+      localStorage.setItem('cart', JSON.stringify(cart)); 
+      updateCartDisplay(); 
+      displayCartItems(); 
+    }
+
+    // Función para limpiar el carrito
+    function clearCart() {
+      localStorage.removeItem('cart'); 
+      updateCartDisplay(); 
+      displayCartItems(); 
+    }
+
+    // Llamar a la funcion de limpiar carrito
+    document.getElementById('clear-cart').addEventListener('click', clearCart);
+
+    // Llamar a la función para mostrar los productos en el carrito al abrir el offcanvas
+    document.getElementById('offcanvasCart').addEventListener('show.bs.offcanvas', displayCartItems);
+
+    // Llamar a la función para actualizar el carrito al cargar la página
+    document.addEventListener('DOMContentLoaded', updateCartDisplay);
+
+    function generarComprobantePago() {
+      // Obtener los datos del usuario del formulario
+      const nombre = document.getElementById('firstName').value;
+      const apellido = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const direccion = document.getElementById('address').value;
+      const ciudad = document.getElementById('city').value;
+      const provincia = document.getElementById('state').value;
+      const codigoPostal = document.getElementById('zip').value;
+
+      // Obtener los productos del carrito
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Calcular el total de la compra
+      let subtotal = 0;
+      let productosDetalles = '';
+
+      cart.forEach(item => {
+        const totalProducto = item.price * item.quantity;
+        subtotal += totalProducto;
+        productosDetalles += `${item.name} (x${item.quantity}) - $${totalProducto.toFixed(2)}<br>`;
+      });
+
+      const impuesto = subtotal * 0.21; // 21% de impuesto
+      const totalCompra = subtotal + impuesto;
+
+      // Generar el contenido del comprobante
+      const comprobante = `
+        <strong>Comprobante de Pago</strong><br>
+        <strong>Fecha:</strong> ${new Date().toLocaleDateString()}<br>
+        <strong>Hora:</strong> ${new Date().toLocaleTimeString()}<br><br>
+
+        <strong>Datos del Usuario:</strong><br>
+        - <strong>Nombre:</strong> ${nombre}<br>
+        - <strong>Apellido:</strong> ${apellido}<br>
+        - <strong>Correo Electrónico:</strong> ${email}<br>
+        - <strong>Dirección:</strong> ${direccion}, ${ciudad}, ${provincia}, ${codigoPostal}<br><br>
+
+        <strong>Productos Comprados:</strong><br>
+        ${productosDetalles}<br>
+
+        <strong>Subtotal:</strong> $${subtotal.toFixed(2)}<br>
+        <strong>Impuesto (21%):</strong> $${impuesto.toFixed(2)}<br>
+        <strong>Total de la Compra:</strong> $${totalCompra.toFixed(2)}<br><br>
+
+        <strong>Método de Pago:</strong> Tarjeta de Crédito<br>
+        <strong>Estado de la Transacción:</strong> Aprobada<br><br>
+
+        <strong>Gracias por su compra!</strong><br>
+        Si tiene alguna pregunta, no dude en contactarnos.
+    `;
+
+      // Insertar el contenido del comprobante en el modal
+      document.getElementById('comprobanteContent').innerHTML = comprobante;
+
+      // Mostrar el modal
+      const comprobanteModal = new bootstrap.Modal(document.getElementById('comprobanteModal'));
+      comprobanteModal.show();
+    }
+
+    // Llamar a la función al enviar el formulario
+    document.querySelector('form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevenir el envío del formulario
+      generarComprobantePago(); // Generar el comprobante
+    });
+
+  </script>
+  <script src="../scripts/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

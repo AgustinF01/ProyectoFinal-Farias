@@ -1,0 +1,90 @@
+::-webkit-scrollbar {
+    width: 10px; 
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #663399;
+}
+.navbar {
+    background-color: #663399;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+.navbar .container-fluid .navbar-brand {
+    color: white;
+}
+.navbar .nav-link {
+    color: white;
+}
+.navbar .nav-link.active {
+    color: white;
+    text-decoration: underline;
+}
+
+.hero {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 120px;
+    font-weight: bold; /* Puedes cambiar el peso de la fuente */
+    background: linear-gradient(90deg, #663399, #0D1A26);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 50px;
+}
+
+
+.popular h2{
+    margin-top: 13%;
+    font-size: 50px;
+}
+
+.product-card {
+    transition: transform 0.2s;
+}
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    background-color: #eb0089;
+    color: white;
+    border: transparent;
+}
+.btn:hover {
+    background-color: #D90080;
+    color: white;
+}
+.btn:click {
+    background-color: #D90080;
+}
+
+.about h2 {
+    font-size: 100px;
+}
+
+.about p {
+    font-size: 30px;
+}
+
+.footer {
+    background-color: #0D1A26;
+    color: white;
+    margin-top: 15%;
+    bottom: 0;
+}

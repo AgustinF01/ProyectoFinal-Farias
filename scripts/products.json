@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "name": "Maceta",
+        "price": 1500,
+        "image": "../resources/maceta.jpg",
+        "description": "Maceta color verde de 25x50CM.",
+        "category": "Jardin"
+    },
+    {
+        "id": 2,
+        "name": "Barco de PVC",
+        "price": 2500,
+        "image": "../resources/barco.jpg",
+        "description": "Barco de juguete hecho en PVC",
+        "category": "Juguetes"
+    },
+    {
+        "id": 3,
+        "name": "Funko Pop",
+        "price": 5000,
+        "image": "../resources/funko.jpg",
+        "description": "Funko Pop 25CM de X serie",
+        "category": "Figuras"
+    },
+    {
+        "id": 4,
+        "name": "Maceta larga",
+        "price": 2500,
+        "image": "../resources/maceta-larga.jpg",
+        "description": "Maceta larga color verde 100x50CM",
+        "category": "Jardin"
+    },
+    {
+        "id": 5,
+        "name": "Max Steel",
+        "price": 2500,
+        "image": "../resources/max-steel.jpg",
+        "description": "Figura Max Stell con partes moviles",
+        "category": "Juguetes"
+    },
+    {
+        "id": 6,
+        "name": "Perrito con chaucha",
+        "price": 2500,
+        "image": "../resources/perro.jpg",
+        "description": "Perrito con chaucha de resina",
+        "category": "Juguetes"
+    },
+    {
+        "id": 7,
+        "name": "Pato",
+        "price": 2500,
+        "image": "../resources/pato.jpg",
+        "description": "Pato hecho en PVC",
+        "category": "Jardin"
+    },
+    {
+        "id": 8,
+        "name": "Flores artificiales",
+        "price": 2500,
+        "image": "../resources/flores.jpg",
+        "description": "Ramo de flores artificiales de PVC",
+        "category": "Hogar"
+    },
+    {
+        "id": 9,
+        "name": "Mario Bros",
+        "price": 2500,
+        "image": "../resources/mario.jpg",
+        "description": "Figura de Mario Bros 15CM",
+        "category": "Figuras"
+    },
+    {
+        "id": 10,
+        "name": "Dinosaurio",
+        "price": 2500,
+        "image": "../resources/dinosaurio.jpg",
+        "description": "Dinosaurio de juguete hecho en PVC",
+        "category": "Juguetes"
+    },
+    {
+        "id": 11,
+        "name": "Cisne",
+        "price": 2500,
+        "image": "../resources/cisne.jpg",
+        "description": "Cisne hecho en PVC",
+        "category": "Jardin"
+    },
+    {
+        "id": 12,
+        "name": "Stormtrooper",
+        "price": 2500,
+        "image": "../resources/stormtrooper.jpg",
+        "description": "Stormstrooper hecho en resina 25CM",
+        "category": "Figuras"
+    },
+    {
+        "id": 13,
+        "name": "Espatula",
+        "price": 2500,
+        "image": "../resources/espatula.jpg",
+        "description": "Espatula de PVC 20CM",
+        "category": "Hogar"
+    }
+]
